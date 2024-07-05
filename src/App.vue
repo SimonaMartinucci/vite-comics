@@ -2,12 +2,14 @@
 import AppHeader from './components/AppHeader.vue'
 import AppProducts from './components/AppProducts.vue'
 import AppMerch from './components/AppMerch.vue'
+import AppUpperFooter from './components/AppUpperFooter.vue'
 
 export default {
   components: {
     AppHeader,
     AppProducts,
     AppMerch,
+    AppUpperFooter,
   }
 }
 </script>
@@ -20,6 +22,9 @@ export default {
     <AppMerch/>
   </main>
 
+  <footer>
+    <AppUpperFooter/>
+  </footer>
 </template>
 
 <style lang="scss">

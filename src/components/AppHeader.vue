@@ -38,11 +38,6 @@ header {
     background-color: white;
     height: 120px;
 
-    a {
-        text-decoration: none;
-        color: $light_gray;
-    }    
-
     .cont-header {
         height: 100%;
         display: flex;
