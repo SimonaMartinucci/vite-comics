@@ -3,6 +3,7 @@ import AppHeader from './components/AppHeader.vue'
 import AppProducts from './components/AppProducts.vue'
 import AppMerch from './components/AppMerch.vue'
 import AppUpperFooter from './components/AppUpperFooter.vue'
+import AppLowerFooter from './components/AppLowerFooter.vue'
 
 export default {
   components: {
@@ -10,6 +11,7 @@ export default {
     AppProducts,
     AppMerch,
     AppUpperFooter,
+    AppLowerFooter,
   }
 }
 </script>
@@ -24,6 +26,7 @@ export default {
 
   <footer>
     <AppUpperFooter/>
+    <AppLowerFooter/>
   </footer>
 </template>
 
