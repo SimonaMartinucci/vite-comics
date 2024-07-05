@@ -7,7 +7,7 @@
 
 <template>
     <header>
-        <div class="cont-header">
+        <div class="container cont-header">
             <div class="header-logo">
                 <img src="../assets/dc-logo.png" alt="logo">
             </div>
@@ -36,7 +36,7 @@
 header {
     width: 100%;
     background-color: white;
-    height: 100px;
+    height: 120px;
 
     a {
         text-decoration: none;
@@ -44,19 +44,17 @@ header {
     }    
 
     .cont-header {
-        width: 70%;
         height: 100%;
-        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         .header-logo {
-        width: 80px;
+            height: 70%;
 
-            img {
-                max-width: 100%;
-            }
+                img {
+                    max-height: 100%;
+                }
         }
 
         nav {
