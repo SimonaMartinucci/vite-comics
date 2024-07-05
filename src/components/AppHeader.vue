@@ -86,7 +86,7 @@ header {
                 }
 
                 li.active {
-                    border-bottom: 4px solid $light_blue;
+                    border-bottom: 3px solid $light_blue;
                 }
 
                 li.active a {

@@ -1,6 +1,22 @@
 <script>
     export default {
         name: "AppLowerFooter",
+        data() {
+            return {
+                imagesIcons: [
+                    { name: "facebook", img: 'footer-facebook.png' },
+                    { name: "twitter", img: "footer-twitter.png" },
+                    { name: "youtube", img: "footer-youtube.png" },
+                    { name: "pinterest", img: "footer-pinterest.png" },
+                    { name: "periscope", img: "footer-periscope.png" }
+                ]
+            }
+        },
+        methods: {
+            getImagePath: function(img) {
+                return new URL(`../assets/${img}`, import.meta.url).href;
+            }
+        }
     }
 </script>
 
@@ -13,14 +29,8 @@
             </div>
             <div class="socials">
                 <a href="#">FOLLOW US</a>
-                <div class="icons">
-                    <img src="../assets/footer-facebook.png" alt="">
-                </div>
-                <div class="icons">
-                    <img src="../assets/footer-facebook.png" alt="">
-                </div>
-                <div class="icons">
-                    <img src="../assets/footer-facebook.png" alt="">
+                <div class="icons" v-for="(icon, index) in imagesIcons" :key="index">
+                    <img :src='getImagePath(icon.img)' :alt="icon.name">
                 </div>
             </div>
         </div>
