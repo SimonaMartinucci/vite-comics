@@ -1,6 +1,22 @@
 <script>
     export default {
         name: "AppMerch",
+        data() {
+            return {
+                merchLinks: [
+                    { name: "DIGITAL COMICS", img: 'buy-comics-digital-comics.png' },
+                    { name: "DC MERCHANDISE", img: "buy-comics-merchandise.png" },
+                    { name: "SUBSCRIPTION", img: "buy-comics-subscriptions.png" },
+                    { name: "COMIC SHOP LOCATION", img: "buy-comics-shop-locator.png" },
+                    { name: "DC POWER VISA", img: "buy-dc-power-visa.svg" }
+                ]
+            }
+        },
+        methods: {
+            getImagePath: function(img) {
+                return new URL(`../assets/${img}`, import.meta.url).href;
+            }
+        }
     }
 </script>
 
@@ -8,23 +24,11 @@
 <template>
     <div class="merch-cont">
         <div class="container">
-           <div class="item">
+           <div class="item" v-for="(link, index) in merchLinks" :key="index">
                 <div class="item_img">
-                    <img src="../assets/buy-comics-digital-comics.png" alt="">
+                    <img :src='getImagePath(link.img)' :alt="link.name">
                 </div>
-                <div class="item_descr">Prova prova</div>
-           </div>
-           <div class="item">
-                <div class="item_img">
-                    <img src="../assets/buy-comics-merchandise.png" alt="">
-                </div>
-                <div class="item_descr">Prova prova</div>
-           </div>
-           <div class="item">
-                <div class="item_img">
-                    <img src="../assets/buy-comics-shop-locator.png" alt="">
-                </div>
-                <div class="item_descr">Prova prova</div>
+                <div class="item_descr">{{link.name}}</div>
            </div>
         </div>
     </div>
@@ -52,12 +56,18 @@
             align-items: center;
 
             .item_img {
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 margin-right: 15px;
 
                 img {
+                    max-width: 100%;
                     height: 100%;
                 }
+            }
+
+            .item_descr {
+                font-size: 12px;
             }
         }
     }
