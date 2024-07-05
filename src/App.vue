@@ -1,11 +1,13 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppProducts from './components/AppProducts.vue'
+import AppMerch from './components/AppMerch.vue'
 
 export default {
   components: {
     AppHeader,
     AppProducts,
+    AppMerch,
   }
 }
 </script>
@@ -15,6 +17,7 @@ export default {
 
   <main>
     <AppProducts/>
+    <AppMerch/>
   </main>
 
 </template>

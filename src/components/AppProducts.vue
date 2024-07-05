@@ -19,9 +19,9 @@
 @use '../styles/partials/mixins' as *;
 
 .content-cont {
-    background-color: black;
+    background-color: #1c1c1c;
     // DEBUG
-    height: 150px;
+    height: 130px;
 
     h3 {
         color: white;
