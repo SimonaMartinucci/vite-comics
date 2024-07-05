@@ -1,6 +1,22 @@
 <script>
     export default {
         name: "AppHeader",
+        data() {
+            return {
+                links: [
+                    { name: "CHARACTERS", href: "#", current: false },
+                    { name: "COMICS", href: "#", current: false },
+                    { name: "MOVIES", href: "#", current: true },
+                    { name: "TV", href: "#", current: false },
+                    { name: "GAMES", href: "#", current: false },
+                    { name: "COLLECTIBLES", href: "#", current: false },
+                    { name: "VIDEOS", href: "#", current: false },
+                    { name: "FANS", href: "#", current: false },
+                    { name: "NEWS", href: "#", current: false },
+                    { name: "SHOP", href: "#", current: false }
+                ]
+            }
+        }
     }
 </script>
 
@@ -13,14 +29,8 @@
             </div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#">HOME</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">HOME</a>
-                    </li>
-                    <li>
-                        <a href="#">HOME</a>
+                    <li v-for="(link, index) in links" :key="index" :class="link.current ? 'active' : ''">
+                        <a :href="link.href">{{ link.name }}</a>
                     </li>
                 </ul>
             </nav>
@@ -37,6 +47,10 @@ header {
     width: 100%;
     background-color: white;
     height: 120px;
+
+    a {
+        color: $light_gray;
+    }
 
     .cont-header {
         height: 100%;
@@ -58,22 +72,21 @@ header {
             ul {
             list-style-type: none; 
             display: flex;
-            // gap: 15px;
             height: 100%;
 
                 li {
                     height: 100%;
                     align-content: center;
                     padding: 0 15px;
+                    font-size: 12px;
                 }
 
                 li:hover {
                     background-color: rgb(239, 238, 238);
-                    cursor: pointer;
                 }
 
                 li.active {
-                    border-bottom: 3px solid $light_blue;
+                    border-bottom: 4px solid $light_blue;
                 }
 
                 li.active a {
