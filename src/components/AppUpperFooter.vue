@@ -1,6 +1,57 @@
 <script>
     export default {
         name: "AppUpperFooter",
+        data() {
+            return {
+                footerLinks: [
+                    {
+                        title: "DC COMICS",
+                        links: [
+                            { name: "Characters", href: "#" },
+                            { name: "Comics", href: "#" },
+                            { name: "Movies", href: "#" },
+                            { name: "TV", href: "#" },
+                            { name: "Games", href: "#" },
+                            { name: "Videos", href: "#" },
+                            { name: "News", href: "#" }
+                        ]
+                    },
+                    {
+                        title: "SHOP",
+                        links: [
+                            { name: "Shop DC", href: "#" },
+                            { name: "Shop DC Collectibles", href: "#" }
+                        ]
+                    },
+                    {
+                        title: "DC",
+                        links: [
+                            { name: "Terms of Use", href: "#" },
+                            { name: "Privacy Policy (New)", href: "#" },
+                            { name: "Ad Choices", href: "#" },
+                            { name: "Advertising", href: "#" },
+                            { name: "Jobs", href: "#" },
+                            { name: "Subscriptions", href: "#" },
+                            { name: "Talent Workshops", href: "#" },
+                            { name: "CPSC Certificates", href: "#" },
+                            { name: "Ratings", href: "#" },
+                            { name: "Shop Help", href: "#" },
+                            { name: "Contacts Us", href: "#" }
+                        ]
+                    },
+                    {
+                        title: "SITES",
+                        links: [
+                            { name: "DC", href: "#" },
+                            { name: "MAD Magazine", href: "#" },
+                            { name: "DC Kids", href: "#" },
+                            { name: "DC Universe", href: "#" },
+                            { name: "DC Power Visa", href: "#" }
+                        ]
+                    }
+                ]
+            }
+        }
     }
 </script>
 
@@ -9,45 +60,11 @@
 
     <div class="up_foot_cont">
         <div class="container">
-            <div class="foot_menu">
-                <h5>Titolo</h5>
+            <div class="foot_menu" v-for="(link, index) in footerLinks" :key="index">
+                <h5>{{ link.title }}</h5>
                 <ul>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot_menu">
-                <h5>Titolo</h5>
-                <ul>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot_menu">
-                <h5>Titolo</h5>
-                <ul>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
-                    </li>
-                    <li>
-                        <a href="#">Voce</a>
+                    <li v-for="(ref, index) in link.links" :key="index">
+                        <a :href="ref.href">{{ ref.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -67,9 +84,6 @@
         background-position-x: 75%;
         background-position-y: center;
         background-repeat: no-repeat;
-        
-        /* DEBUG */
-        height: 250px;
 
         .container {
             display: flex;
