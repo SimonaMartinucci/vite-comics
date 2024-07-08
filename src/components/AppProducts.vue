@@ -92,7 +92,7 @@ import ProductCards from './ProductCards.vue'
 <template>
     <div class="cont-jumbo">
         <div class="jumbo">
-        <img src="https://images6.alphacoders.com/705/705204.jpg" alt="jumbotron">
+        <img src="https://images2.alphacoders.com/131/1310578.jpg" alt="jumbotron">
     </div>
     <h3>CURRENT SERIES</h3>
     </div>
