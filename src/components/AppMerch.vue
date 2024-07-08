@@ -58,7 +58,7 @@
             .item_img {
                 width: 40px;
                 height: 40px;
-                margin-right: 15px;
+                margin-right: 10px;
 
                 img {
                     max-width: 100%;
