@@ -23,7 +23,7 @@
 @use '../styles/partials/mixins' as *;
 
 .card {
-    width: calc((100% / 6) - 15px);
+    width: calc((100% / 6) - 30px);
 
     h4 {
         color: white;
